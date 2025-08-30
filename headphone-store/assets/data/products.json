@@ -1,14 +1,115 @@
 [
-  {"id":1,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
-  {"id":2,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
-  {"id":3,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
-  {"id":4,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
-  {"id":5,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
-  {"id":6,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
-  {"id":7,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
-  {"id":8,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
-  {"id":9,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
-  {"id":10,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
-  {"id":11,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
-  {"id":12,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"}
+  {
+    "id": 1,
+    "name": "Bose QC45",
+    "price": 329.00,
+    "category": "Over-Ear",
+    "image": "images/bose.png",
+    "description": "Premium noise-cancelling headphones with plush comfort, long battery life, and balanced sound."
+  },
+  {
+    "id": 2,
+    "name": "JBL Live 660NC",
+    "price": 199.99,
+    "category": "Over-Ear",
+    "image": "images/jbl.png",
+    "description": "Feature-rich wireless headphones offering adaptive noise cancellation and deep bass."
+  },
+  {
+    "id": 3,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 4,
+    "name": "Bose QC45",
+    "price": 329.00,
+    "category": "Over-Ear",
+    "image": "images/bose.png",
+    "description": "Premium noise-cancelling headphones with plush comfort, long battery life, and balanced sound."
+  },
+  {
+    "id": 5,
+    "name": "JBL Live 660NC",
+    "price": 199.99,
+    "category": "Over-Ear",
+    "image": "images/jbl.png",
+    "description": "Feature-rich wireless headphones offering adaptive noise cancellation and deep bass."
+  },
+  {
+    "id": 6,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 7,
+    "name": "Bose QC45",
+    "price": 329.00,
+    "category": "Over-Ear",
+    "image": "images/bose.png",
+    "description": "Premium noise-cancelling headphones with plush comfort, long battery life, and balanced sound."
+  },
+  {
+    "id": 8,
+    "name": "JBL Live 660NC",
+    "price": 199.99,
+    "category": "Over-Ear",
+    "image": "images/jbl.png",
+    "description": "Feature-rich wireless headphones offering adaptive noise cancellation and deep bass."
+  },
+  {
+    "id": 9,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 10,
+    "name": "JBL Live 660NC",
+    "price": 199.99,
+    "category": "Over-Ear",
+    "image": "images/jbl.png",
+    "description": "Feature-rich wireless headphones offering adaptive noise cancellation and deep bass."
+  },
+  {
+    "id": 11,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 12,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 13,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  },
+  {
+    "id": 14,
+    "name": "Apple AirPods Max",
+    "price": 549.00,
+    "category": "Over-Ear",
+    "image": "images/apple.png",
+    "description": "High-fidelity audio with spatial sound, premium design, and seamless Apple ecosystem integration."
+  }
 ]
+
