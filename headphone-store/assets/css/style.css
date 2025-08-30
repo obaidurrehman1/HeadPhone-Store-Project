@@ -689,6 +689,7 @@ main {
   max-width: 900px;
   width: 100%;
   background: #fff;
+  color: #000000;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -720,16 +721,27 @@ main {
 }
 
 #addToCartBtn {
-  padding: 10px 20px;
-  background-color: #0077cc;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
   color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 #addToCartBtn:hover {
-  background-color: #005fa3;
+  background: linear-gradient(135deg, #005fa3, #004080);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+#addToCartBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 
