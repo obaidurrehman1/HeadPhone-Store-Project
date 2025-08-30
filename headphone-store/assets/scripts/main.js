@@ -62,30 +62,59 @@ function loadPartials() {
     .then((data) => (document.getElementById("footer").innerHTML = data));
 }
 
-// Load featured products from JSON
+// all products array
+let allProducts = [];
+
+function renderProducts(products) {
+  const grid = document.getElementById("featured-products");
+  grid.innerHTML = ""
+  products.forEach((p) => {
+    const card = `
+      <div class="featured-product-card">
+        <img src="assets/${p.image}" alt="${p.name}" class="featured-product-image">
+        <h3 class="featured-product-name">${p.name}</h3>
+        <p class="featured-product-price">$${p.price}</p>
+        <a href="viewproduct.html?id=${p.id}" class="featured-product-view-btn">View</a>
+      </div>
+    `;
+    grid.innerHTML += card;
+  });
+}
+
 function loadProducts() {
   fetch("assets/data/products.json")
     .then((res) => res.json())
     .then((products) => {
-      const grid = document.getElementById("featured-products");
-
-      products.forEach((p) => {
-        const card = `
-          <div class="featured-product-card">
-            <img src="assets/${p.image}" alt="${p.name}" class="featured-product-image">
-            <h3 class="featured-product-name">${p.name}</h3>
-            <p class="featured-product-price">$${p.price}</p>
-            <a href="viewproduct.html?id=${p.id}" class="featured-product-view-btn">View</a>
-          </div>
-        `;
-        grid.innerHTML += card;
-      });
+      allProducts = products;
+      renderProducts(allProducts); // initial render
     })
     .catch((err) => console.error("Error loading products:", err));
 }
+
+let hasScrolledToFeatured = false;
 
 // Initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
   loadPartials();
   loadProducts();
+
+  // search featured products
+  document.addEventListener("input", (e) => {
+    if (e.target.classList.contains("search-bar")) {
+      const term = e.target.value.toLowerCase();
+      const filtered = allProducts.filter((p) =>
+        p.name.toLowerCase().includes(term)
+      );
+      renderProducts(filtered);
+
+      const section = document.querySelector(".featured-products-section");
+      if (section && !hasScrolledToFeatured && term.length > 0) {
+        section.scrollIntoView({ behavior: "smooth" });
+        hasScrolledToFeatured = true;
+      }
+      if (term.length === 0) {
+        hasScrolledToFeatured = false;
+      }
+    }
+  });
 });
