@@ -75,7 +75,7 @@ function loadProducts() {
             <img src="assets/${p.image}" alt="${p.name}" class="featured-product-image">
             <h3 class="featured-product-name">${p.name}</h3>
             <p class="featured-product-price">$${p.price}</p>
-            <a href="product.html?id=${p.id}" class="featured-product-view-btn">View</a>
+            <a href="viewproduct.html?id=${p.id}" class="featured-product-view-btn">View</a>
           </div>
         `;
         grid.innerHTML += card;
