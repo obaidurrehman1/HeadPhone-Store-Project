@@ -16,15 +16,12 @@ registerForm.addEventListener("submit", (event) => {
   }
   
   // check if user exists
-  const storedUser = localStorage.getItem(email);
+  const storedUser = JSON.parse(localStorage.getItem(email));
 
   if (!storedUser) {
     alert("No account found with this email. Please register first.");
     return;
   }
-
-  console.log(storedUser.password);
-  console.log(password);
 
   if (storedUser.password !== password) {
     alert("Incorrect password. Please try again.");
