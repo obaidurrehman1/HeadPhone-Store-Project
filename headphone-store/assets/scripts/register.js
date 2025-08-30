@@ -1,13 +1,18 @@
 const registerForm = document.querySelector(".register-form");
 
+const passwordField = document.getElementById("password");
+const confirmPasswordField = document.getElementById("confirm-password");
+const showPasswordCheckbox = document.getElementById("show-password");
+
 registerForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const username = document.getElementById("username").value.trim();
   const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm-password").value;
 
+  const password = passwordField.value;
+  const confirmPassword = confirmPasswordField.value;
+ 
   // validation fails for empty fields or invalid email format
   if (!registerForm.checkValidity()) {
     registerForm.reportValidity();
@@ -39,3 +44,12 @@ registerForm.addEventListener("submit", (event) => {
   alert("Registration successful! Redirecting to login page...");
   window.location.href = "login.html";
 });
+
+
+// show passord functionality
+showPasswordCheckbox.addEventListener("change", () => {
+  const type = showPasswordCheckbox.checked ? "text" : "password";
+  passwordField.type = type;
+  confirmPasswordField.type = type;
+});
+

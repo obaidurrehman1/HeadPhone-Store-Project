@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="MAHAM BINNAT ABDUL RAUF" />
-    <title>Register Page</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <div id="header"></div>
-    <main>
-      <section class="register-page">
-        <div class="register-container">
-          <div class="register-image"></div>
-          <div class="register-form-wrapper">
-            <h2 class="register-title">Create Account</h2>
-            <p class="register-subtitle">Join Sounds Mart today!</p>
-            <form class="register-form">
-              <label for="username">Username</label>
-              <input type="text" id="username" required />
-              <label for="email">Email</label>
-              <input type="email" id="email" required />
-              <label for="password">Password</label>
-              <input type="password" id="password" required />
-              <label for="confirm-password">Confirm Password</label>
-              <input type="password" id="confirm-password" required />
-              <button type="submit" class="btn register-btn">Register</button>
-            </form>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="MAHAM BINNAT ABDUL RAUF" />
+  <title>Register Page</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+  <main>
+    <section class="register-page">
+      <div class="register-container">
+        <div class="register-image"></div>
+        <div class="register-form-wrapper">
+          <h2 class="register-title">Create Account</h2>
+          <p class="register-subtitle">Join Sounds Mart today!</p>
+          <form class="register-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" required />
+            <div class="show-password-wrapper">
+              <input type="checkbox" id="show-password" />
+              <label for="show-password">Show Passwords</label>
+            </div>
+            <button type="submit" class="btn register-btn">Register</button>
+          </form>
         </div>
-      </section>
-    </main>
-    <script src="assets/scripts/main.js"></script>
-    <script src="assets/scripts/register.js"></script>
-  </body>
+      </div>
+    </section>
+  </main>
+  <script src="assets/scripts/main.js"></script>
+  <script src="assets/scripts/register.js"></script>
+</body>
+
 </html>

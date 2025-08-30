@@ -654,3 +654,17 @@ main {
 .view-link:hover {
   text-decoration: underline;
 }
+
+/* Show Password */
+.show-password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+.show-password-wrapper input {
+  width: auto;
+  margin: 0;
+}
