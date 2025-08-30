@@ -1,14 +1,14 @@
 [
-  {"id":1,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
+  {"id":1,"name":"Bose QC45","price":329.00,"category":"Wired","image":"images/bose.png"},
   {"id":2,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
   {"id":3,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
-  {"id":4,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
+  {"id":4,"name":"Bose QC45","price":329.00,"category":"Wireless","image":"images/bose.png"},
   {"id":5,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
   {"id":6,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
   {"id":7,"name":"Bose QC45","price":329.00,"category":"Over-Ear","image":"images/bose.png"},
-  {"id":8,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
+  {"id":8,"name":"JBL Live 660NC","price":199.99,"category":"Wired","image":"images/jbl.png"},
   {"id":9,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
   {"id":10,"name":"JBL Live 660NC","price":199.99,"category":"Over-Ear","image":"images/jbl.png"},
-  {"id":11,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"},
+  {"id":11,"name":"Apple AirPods Max","price":549.00,"category":"Bluetooth","image":"images/apple.png"},
   {"id":12,"name":"Apple AirPods Max","price":549.00,"category":"Over-Ear","image":"images/apple.png"}
 ]

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("assets/data/products.json")
     .then(res => res.json())
     .then(products => {
-      // Use == to match string ID from URL with number in JSON
+      // Match product by ID
       const product = products.find(p => p.id == productId);
 
       if (!product) {
@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      // Inject HTML that uses existing CSS classes
       document.getElementById("product-details").innerHTML = `
-        <div class="view-product-card">
-          <img src="${product.image}" alt="${product.name}">
-          <div class="view-product-info">
+        <div class="product-detail">
+          <img src="assets/${product.image}" alt="${product.name}">
+          <div class="product-info">
             <h2>${product.name}</h2>
             <p class="price">$${product.price.toFixed(2)}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
+            <button id="addToCartBtn" onclick="addToCart(${product.id})">Add to Cart</button>
           </div>
         </div>
       `;
@@ -35,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 function addToCart(productId) {
   fetch("assets/data/products.json")
     .then(res => res.json())
@@ -45,11 +45,14 @@ function addToCart(productId) {
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
       const existing = cart.find(item => item.id === product.id);
-      if (existing) existing.quantity += 1;
-      else cart.push({ ...product, quantity: 1 });
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
 
       localStorage.setItem("cart", JSON.stringify(cart));
       alert(`${product.name} added to cart!`);
-      updateCartCount(); // From main.js
+      updateCartCount(); // from main.js
     });
 }
