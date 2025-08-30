@@ -1,0 +1,453 @@
+/* ================= Global ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* ================= Header ================= */
+
+.main-header {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(123,97,255,0.3);
+  position: sticky;
+  top: 0;
+  height: 70px; 
+  display: flex;
+  align-items: center;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+/* --- Logo --- */
+.logo-img {
+  max-height: 100px;
+  width: auto;     
+  margin-right: 10px;
+  display: inline-block;
+}
+/* --- Navigation --- */
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #7B61FF;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #7B61FF;
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* --- Header Actions --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: #121212;
+  color: #fff;
+  outline: none;
+  width: 200px;
+  transition: 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #7B61FF;
+  box-shadow: 0 0 10px rgba(123,97,255,0.4);
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #7B61FF;
+}
+
+.login-btn:hover {
+  background: #7B61FF;
+  color: #fff;
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #7B61FF, #9a80ff);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(123,97,255,0.4);
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #5c45cc, #7B61FF);
+  transform: translateY(-2px);
+}
+
+.header-actions .btn.active {
+  background: #7B61FF;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123,97,255,0.6);
+}
+
+
+/* ================= Footer ================= */
+.main-footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 20px;
+  background: #1f1f1f;
+}
+
+/* ================= Hero Section ================= */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(18,18,18,0.6), rgba(18,18,18,0.6)),
+              url('../images/hero.png') center center/cover no-repeat;
+}
+
+.hero-content-wrapper {
+  padding: 20px;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 3em;
+  color: #7B61FF;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.hero-shop-btn {
+  padding: 12px 25px;
+  background: #7B61FF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero-shop-btn:hover {
+  background: #5c45cc;
+}
+
+/* ================= Featured Products ================= */
+.featured-products-section {
+  padding: 50px 20px;
+}
+
+.featured-products-title {
+  text-align: center;
+  font-size: 2em;
+  color: #7B61FF;
+  margin-bottom: 40px;
+}
+
+.featured-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.featured-product-card {
+  background: #1f1f1f;
+  border: 2px solid #7B61FF;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  width: 220px;
+  transition: 0.3s;
+}
+
+.featured-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(123,97,255,0.5);
+}
+
+.featured-product-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.featured-product-name {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.featured-product-price {
+  font-weight: bold;
+  color: #7B61FF;
+}
+
+.featured-product-view-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #7B61FF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.featured-product-view-btn:hover {
+  background: #5c45cc;
+}
+
+/* ================= Benefits Section ================= */
+.benefits-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.benefits-title {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #7B61FF;
+}
+
+.benefits-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(123,97,255,0.4);
+}
+
+.benefit-title {
+  color: #7B61FF;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.benefit-description {
+  font-size: 0.95em;
+  color: #fff;
+}
+
+
+/* ================= Register User Section ================= */
+.register-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #060303;
+}
+
+.register-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left Image */
+.register-image {
+  flex: 3.5;
+  background: url('../images/hero.png') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Right Form */
+.register-form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 4rem;
+  background: #1E1E1E;
+}
+
+.register-form-wrapper .register-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.register-form-wrapper .register-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+.register-form-wrapper .register-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.register-form label {
+  color: #ccc;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.register-form input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2A2A2A;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.register-form input:focus {
+  border-color: #6C63FF;
+  outline: none;
+  box-shadow: 0 0 8px #6C63FF50;
+}
+
+/* ================= Login User Section ================= */
+
+/* Bottom Text */
+.register-text {
+  margin-top: 1rem;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.register-link {
+  color: #6C63FF;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+
+.about-page {
+  padding: 3rem 4rem;
+  background: #1E1E1E;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6C63FF;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+.about-section {
+  margin-bottom: 2.5rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  color: #6C63FF;
+  margin-bottom: 1rem;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  list-style: inside disc;
+  margin-left: 1rem;
+}
+
+.about-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #060303;
+  color: #aaa;
+  margin-top: 3rem;
+}
