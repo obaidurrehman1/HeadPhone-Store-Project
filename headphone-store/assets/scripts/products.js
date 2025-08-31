@@ -1,25 +1,34 @@
 // Load products into the products page
-document.addEventListener("DOMContentLoaded", () => {
-  loadPartials();
-  renderProducts();
+document.addEventListener("DOMContentLoaded", async() => {
+  await listProducts();
   setupViewToggle();
   setupProductListeners();
   updateCartCount();
+  setupSearch();
 });
 
 // Fetch products
-async function loadProducts() {
+async function loadProductsFunc() {
   const res = await fetch("assets/data/products.json");
   return await res.json();
 }
 
-// Render product cards
-async function renderProducts() {
+// Render product cards with optional search filter
+async function listProducts(searchTerm = "") {
   const container = document.getElementById("products-container");
   container.innerHTML = "";
-  const products = await loadProducts();
+  const products = await loadProductsFunc();
 
-  products.forEach(p => {
+  //products if search term is provided
+  const filteredProducts = products.filter(p =>
+    p.name.toLowerCase().includes(searchTerm)
+  );
+
+  if (filteredProducts.length === 0) {
+    return;
+  }
+
+  filteredProducts.forEach(p => {
     const card = document.createElement("div");
     card.classList.add("product-card");
     card.innerHTML = `
@@ -54,7 +63,7 @@ function setupProductListeners() {
   document.getElementById("products-container").addEventListener("click", async (e) => {
     if (e.target.classList.contains("add-to-cart-btn")) {
       const id = parseInt(e.target.dataset.id);
-      const products = await loadProducts();
+      const products = await loadProductsFunc();
       const product = products.find(p => p.id === id);
       addToCart(product);
     }
@@ -88,4 +97,13 @@ function updateCartCount() {
   const count = cart.reduce((sum, i) => sum + i.quantity, 0);
   let el = document.getElementById("cart-item-count");
   if (el) el.textContent = count;
+}
+
+// search functionality
+function setupSearch() {
+  const searchInput = document.querySelector(".search-bar");
+  searchInput.addEventListener("input", async(e) => {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    await listProducts(searchTerm);
+  });
 }
