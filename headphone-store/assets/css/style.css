@@ -16,6 +16,7 @@ body {
 
 main {
   margin-top: 70px;
+  flex: 1;
 }
 
 /* ================= Header ================= */
@@ -717,26 +718,25 @@ main {
 .price {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #333;
+  color: #7B61FF;
 }
 
 #addToCartBtn {
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #0077cc, #005fa3);
+  padding: 8px 15px;
+  background: #7B61FF;
   color: #fff;
   font-size: 1rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  box-shadow: none;
 }
 
 #addToCartBtn:hover {
-  background: linear-gradient(135deg, #005fa3, #004080);
+  background: #5c45cc;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 #addToCartBtn:active {
@@ -748,13 +748,60 @@ main {
 .view-link {
   display: inline-block;
   margin-top: 8px;
+  padding: 8px 15px;
+  background: #7B61FF;
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  /* font-weight: bold; */
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .view-link:hover {
-  text-decoration: underline;
+  background: #5c45cc;
+  text-decoration: none;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.product-detail {
+  background: #1f1f1f;
+  color: #fff;
+  border: 2px solid #7B61FF;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 8px 20px rgba(123,97,255,0.3);
+}
+
+.product-detail img {
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.product-info h2 {
+  color: #7B61FF;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-info .product-description {
+  color: #bbb;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.product-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 /* Show Password */

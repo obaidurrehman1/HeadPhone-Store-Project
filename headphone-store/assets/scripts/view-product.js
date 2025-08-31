@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("assets/data/products.json")
     .then(res => res.json())
     .then(products => {
-      // Match product by ID
       const product = products.find(p => p.id == productId);
 
       if (!product) {
@@ -18,14 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Inject HTML that uses existing CSS classes
       document.getElementById("product-details").innerHTML = `
         <div class="product-detail">
-          <img src="assets/${product.image}" alt="${product.name}">
+          <div class="product-image-wrapper">
+            <img src="assets/${product.image}" alt="${product.name}">
+          </div>
           <div class="product-info">
             <h2>${product.name}</h2>
+            <p class="product-description">${product.description || "No description available."}</p>
             <p class="price">$${product.price.toFixed(2)}</p>
-            <button id="addToCartBtn" onclick="addToCart(${product.id})">Add to Cart</button>
+            <div class="product-actions">
+              <button id="addToCartBtn" onclick="addToCart(${product.id})">Add to Cart</button>
+              <a href="product.html" class="view-link">← Back to Products</a>
+            </div>
           </div>
         </div>
       `;
@@ -53,6 +57,13 @@ function addToCart(productId) {
 
       localStorage.setItem("cart", JSON.stringify(cart));
       alert(`${product.name} added to cart!`);
-      updateCartCount(); // from main.js
+      updateCartCount(); 
     });
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+  let el = document.getElementById("cart-item-count");
+  if (el) el.textContent = count;
 }
